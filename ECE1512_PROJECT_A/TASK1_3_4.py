@@ -67,7 +67,7 @@ transform = transforms.Compose([
 ])
 
 # Load synthetic MNIST dataset
-synthetic_mnist_dir = '/content/synthetic_images'  # Replace with your directory path
+synthetic_mnist_dir = '/content/synthetic_images'
 synthetic_mnist_dataset = SyntheticMNISTDataset(synthetic_mnist_dir, transform=transform)
 synthetic_mnist_loader = DataLoader(synthetic_mnist_dataset, batch_size=10, shuffle=True)
 
@@ -202,8 +202,8 @@ transform_mhist = transforms.Compose([
 
 # Load synthetic and real MHIST datasets
 synthetic_mhist_dir = '/content/synthetic_mhist'  # Path to synthetic MHIST images
-real_mhist_img_dir = '/content/gdrive/MyDrive/submission_files1/mhist_dataset/images'  # Path to real MHIST images on Google Drive
-annotations_file = "/content/gdrive/MyDrive/submission_files1/mhist_dataset/annotations.csv"  # Path to annotations.csv for MHIST
+real_mhist_img_dir = '/content/gdrive/MyDrive/submission_files1/mhist_dataset/images'
+annotations_file = "/content/gdrive/MyDrive/submission_files1/mhist_dataset/annotations.csv"
 
 synthetic_mhist_dataset = SyntheticMHISTDataset(synthetic_mhist_dir, transform=transform_mhist)
 real_mhist_dataset = RealMHISTDataset(real_mhist_img_dir, annotations_file, transform=transform_mhist)
@@ -280,7 +280,6 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import datasets, transforms
 from PIL import Image
 
-# Set device to GPU if available
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # Define a basic CNN architecture template to allow simple NAS
@@ -346,7 +345,7 @@ transform_mnist = transforms.Compose([
 ])
 
 # Load the synthetic MNIST dataset
-synthetic_mnist_dir = '/content/synthetic_images'  # Replace with the path to your synthetic MNIST images
+synthetic_mnist_dir = '/content/synthetic_images'
 synthetic_mnist_dataset = SyntheticMNISTDataset(synthetic_mnist_dir, transform=transform_mnist)
 synthetic_mnist_loader = DataLoader(synthetic_mnist_dataset, batch_size=16, shuffle=True)
 
