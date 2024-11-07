@@ -215,7 +215,7 @@ synthetic_mhist_loader = DataLoader(synthetic_mhist_dataset, batch_size=batch_si
 real_mhist_loader = DataLoader(real_mhist_dataset, batch_size=batch_size_test, shuffle=False)
 
 # Load VGG11 from torchvision and modify the final layer
-model = models.vgg11(pretrained=False)  # Use pretrained=True if you want to fine-tune from ImageNet weights
+model = models.vgg11(pretrained=False)
 model.classifier[6] = nn.Linear(4096, 2)  # Change the output layer to match 2 classes
 model = model.to(device)
 
